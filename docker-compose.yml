@@ -71,6 +71,7 @@ services:
       - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://172.18.0.5:9092
       - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
       - ALLOW_PLAINTEXT_LISTENER=yes
+      - TOPIC_NAME=Order
     depends_on:
       zookeeper:
         condition: service_started

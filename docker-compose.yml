@@ -74,26 +74,11 @@ services:
     depends_on:
       zookeeper:
         condition: service_started
+    volumes:
+      - ./kafka/kafka-setup.sh:/kafka-setup.sh
     networks:
       datapipeline:
         ipv4_address: 172.18.0.5
-
-  kafka-create-topic:
-    image: bitnami/kafka:latest
-    container_name: kafka-create-topic
-    networks:
-      datapipeline:
-        ipv4_address: 172.18.0.6
-    command: [ "/bin/bash", "-c", "/kafka-setup.sh"]
-    environment:
-      - TOPIC_NAME=Order
-    depends_on:
-      kafka:
-        condition: service_started
-    volumes:
-      - type: bind
-        source: ./kafka/kafka-setup.sh
-        target: /kafka-setup.sh
 
   api-producer:
     build:

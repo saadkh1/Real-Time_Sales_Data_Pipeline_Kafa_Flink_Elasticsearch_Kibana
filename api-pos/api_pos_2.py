@@ -51,7 +51,7 @@ while True:
         "sale_time": datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
     }
 
-    api_url = "http://localhost:8081/orderitem"
+    api_url = "http://localhost:8082/orderitem"
 
     response = requests.post(api_url, json=payload)
 

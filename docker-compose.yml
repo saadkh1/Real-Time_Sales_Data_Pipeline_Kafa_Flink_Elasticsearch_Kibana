@@ -88,12 +88,13 @@ services:
     container_name: api-producer
     depends_on:
       kafka:
-        condition: service_completed_successfully
+        condition: service_started
     ports:
       - '8082:8080'
     networks:
       datapipeline:
         ipv4_address: 172.18.0.7
+    restart: always
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.8.0

@@ -1,5 +1,7 @@
 # Real-Time Sales Data Pipeline with Kafka, Flink, Elasticsearch, and Kibana
 
+![0](images/image3.png)
+
 This repository provides a streamlined solution for building a real-time sales data pipeline. Leveraging Kafka, Flink, Elasticsearch, and Kibana, it offers a comprehensive platform for ingesting, processing, storing, and visualizing sales data in real-time.
 
 ## Getting Started:

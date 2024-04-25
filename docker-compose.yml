@@ -87,7 +87,7 @@ services:
       dockerfile: dockerfile
     container_name: api-producer
     depends_on:
-      kafka-create-topic:
+      kafka:
         condition: service_completed_successfully
     ports:
       - '8082:8080'

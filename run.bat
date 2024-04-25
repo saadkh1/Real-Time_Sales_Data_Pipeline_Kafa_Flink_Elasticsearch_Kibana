@@ -10,7 +10,6 @@ echo Executing Flink job...
 docker-compose exec jobmanager ./bin/flink run -py /opt/pyflink/main.py -d
 
 echo Create Kafka topic...
-docker-compose exec kafka /opt/bitnami/kafka/bin/kafka-topics.sh --create --if-not-exists --topic %TOPIC_NAME% --replication-factor 1 --partitions 1 --bootstrap-server 172.18.0.5:9092
-echo "topic %TOPIC_NAME% was created"
+docker-compose exec kafka /bin/bash -c "sleep 10 && /kafka-setup.sh"
 
 echo Script execution completed.
